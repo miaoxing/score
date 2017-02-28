@@ -1,0 +1,23 @@
+{
+  "name": "miaoxing/score",
+  "description": "Miaoxing Score Plugin",
+  "keywords": [
+    "miaoxing", "score"
+  ],
+  "license": "MIT",
+  "require": {
+    "miaoxing/app": "dev-master@dev"
+  },
+  "autoload": {
+    "psr-4": {
+      "Miaoxing\\Score\\": "src"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "MiaoxingTest\\Score\\": "tests"
+    }
+  },
+  "minimum-stability": "dev",
+  "prefer-stable": true
+}
