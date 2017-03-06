@@ -21,24 +21,24 @@
                             <span><img src="<?= $asset('assets/images/score_add.png')?>"/></span>
                             <?php else :?>
                             <span><img src="<?= $asset('assets/images/score_minus.png')?>"/></span>
-                            <?php endif;?>
+                            <?php endif; ?>
                         </div>
                         <div style="position:absolute; top: 5px; left: 35px;font-size:16px;">
                         <?php if ($value['score'] > 0) :?>
                             赠送<span style="color:#8FD4A8;"><?= $value['score']?></span>
                         <?php else :?>
                         消耗<span style="color:#E54B17;;"><?= abs($value['score'])?></span>
-                        <?php endif;?>
+                        <?php endif; ?>
                         </div>
                         <div style="position:absolute; top: 5px; right: 25px;font-size:12px;font-weight:normal">
                             <span><?= substr($value['createTime'], 0, 10)?></span>
                         </div>
                     </div>
                 </li>
-                <?php endforeach;?>
+                <?php endforeach; ?>
                 <?php else :?>
                 <li>暂无记录</li>
-                <?php endif;?>
+                <?php endif; ?>
             </ul>
         </div>
     </div>
