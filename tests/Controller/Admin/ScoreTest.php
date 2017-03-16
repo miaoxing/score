@@ -2,6 +2,8 @@
 
 namespace MiaoxingTest\Score\Controller\Admin;
 
-class ScoreTest extends \Miaoxing\Plugin\Test\BaseControllerTestCase
+use Miaoxing\Plugin\Test\BaseControllerTestCase;
+
+class ScoreTest extends BaseControllerTestCase
 {
 }
