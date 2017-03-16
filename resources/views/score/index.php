@@ -3,7 +3,7 @@
 <?php require $view->getFile('@order/mall/asset-jqm.php') ?>
 
 <?= $block('css') ?>
-<link rel="stylesheet" href="<?= $asset('plugins/score/public/css/score.css') ?>"/>
+<link rel="stylesheet" href="<?= $asset('plugins/score/css/score.css') ?>"/>
 <?= $block->end() ?>
 
 <div data-role="content">
