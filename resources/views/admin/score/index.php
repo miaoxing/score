@@ -42,11 +42,11 @@
         </label>
 
         <div class="col-lg-4">
-          <input style="padding-left:10px;" type="checkbox" class="form-control" name="all" value="all" value="1">
+          <input type="checkbox" class="form-control" name="all" value="all">
         </div>
       </div>
 
-      <div class="form-group" style="display:none;">
+      <div class="form-group display-none">
         <label class="col-lg-2 control-label" for="userlist">
           用户
         </label>

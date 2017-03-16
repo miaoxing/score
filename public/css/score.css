@@ -1,0 +1,47 @@
+.score-index {
+  height: 50px;
+  line-height: 50px;
+  overflow: hidden;
+  margin-left: 30px;
+}
+
+.score-title {
+  font-size: 18px;
+}
+
+.score-num {
+  font-weight: bold;
+  font-size: 22px;
+  color: #E54B17;
+}
+
+.score-list {
+  margin-top: 30px;
+}
+
+.score-footer-t {
+  position: absolute;
+  top: 5px;
+  right: 25px;
+  font-size: 12px;
+  font-weight: normal
+}
+
+.score-body-t {
+  position: absolute;
+  top: 5px;
+  left: 35px;
+  font-size: 16px;
+}
+
+.score-body {
+  position: relative;
+}
+
+.score-add-c {
+  color:#8FD4A8;
+}
+
+.score-minus-c {
+  color:#E54B17;
+}
