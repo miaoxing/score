@@ -12,7 +12,7 @@
 .score-num {
   font-weight: bold;
   font-size: 22px;
-  color: #E54B17;
+  color: #e54b17;
 }
 
 .score-list {
@@ -39,9 +39,9 @@
 }
 
 .score-add-c {
-  color:#8FD4A8;
+  color: #8fd4a8;
 }
 
 .score-minus-c {
-  color:#E54B17;
+  color: #e54b17;
 }
