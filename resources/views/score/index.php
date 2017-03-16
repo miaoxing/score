@@ -1,7 +1,5 @@
 <?php $view->layout('plugin:layouts/jqm.php') ?>
 
-<?php require $view->getFile('@order/mall/asset-jqm.php') ?>
-
 <?= $block('css') ?>
 <link rel="stylesheet" href="<?= $asset('plugins/score/css/score.css') ?>"/>
 <?= $block->end() ?>
