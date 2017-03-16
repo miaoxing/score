@@ -17,6 +17,6 @@ class Score extends \miaoxing\plugin\BaseController
     {
         $score = wei()->score->getScore();
 
-        return $this->json('成功', 1, array('data' => $score));
+        return $this->json('成功', 1, ['data' => $score]);
     }
 }
