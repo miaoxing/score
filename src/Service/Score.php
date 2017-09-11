@@ -4,6 +4,7 @@ namespace Miaoxing\Score\Service;
 
 use miaoxing\plugin\BaseModel;
 use Miaoxing\Plugin\Service\User;
+use Miaoxing\Score\Job\PostScoreChange;
 
 class Score extends BaseModel
 {
@@ -110,9 +111,17 @@ class Score extends BaseModel
         $user->save();
         $user['score'] = $balance;
 
+        // 4. 触发积分更改后事件
+        wei()->event->trigger('postScoreChange', [$user, $score, $remark]);
+        wei()->queue->push(PostScoreChange::className(), [
+            'user_id' => $user['id'],
+            'score' => $score,
+            'remark' => $remark
+        ], wei()->app->getNamespace());
+
         // 发送模板消息
         $this->sendChangedScoreTplMsg($user, $score);
-        // 4. 返回结果
+
         return ['code' => 1, 'message' => '更改成功'];
     }
 
