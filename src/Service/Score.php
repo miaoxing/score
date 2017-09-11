@@ -12,11 +12,11 @@ class Score extends BaseModel
 
     /**
      * 积分变更通知
-     * @param \Miaoxing\Plugin\Service\User $user
+     * @param User $user
      * @param $changeScore
      * @return array|void
      */
-    public function sendChangedScoreTplMsg(\Miaoxing\Plugin\Service\User $user, $changeScore)
+    public function sendChangedScoreTplMsg(User $user, $changeScore)
     {
         $data = $this->getSendChangedScoreTplData($user, $changeScore);
         $url = wei()->url->full('score');
@@ -33,11 +33,11 @@ class Score extends BaseModel
      * 积分数：{{keyword2.DATA}}
      * 当前积分总数：{{keyword3.DATA}}
      * {{remark.DATA}}
-     * @param \Miaoxing\Plugin\Service\User $user
+     * @param User $user
      * @param $changeScore
      * @return array
      */
-    public function getSendChangedScoreTplData(\Miaoxing\Plugin\Service\User $user, $changeScore)
+    public function getSendChangedScoreTplData(User $user, $changeScore)
     {
         $scoreTitle = wei()->setting('score.title', '积分');
 
@@ -60,7 +60,7 @@ class Score extends BaseModel
         ];
     }
 
-    public function getScore(\Miaoxing\Plugin\Service\User $user = null)
+    public function getScore(User $user = null)
     {
         $user || $user = wei()->curUser;
 
@@ -77,15 +77,20 @@ class Score extends BaseModel
      * 为用户增加或减少积分
      *
      * @param int $score 积分,可正可负
-     * @param string $remark 备注
-     * @param \Miaoxing\Plugin\Service\User $user 用户对象
+     * @param array|string $data 备注或日志数据
+     * @param User $user 用户对象
      * @return array
      */
-    public function changeScore($score, $remark, \Miaoxing\Plugin\Service\User $user = null)
+    public function changeScore($score, $data, User $user = null)
     {
         $user || $user = wei()->curUser;
 
-        $ret = wei()->event->until('scoreChange', [$user, $score, $remark]);
+        // 兼容旧数据
+        if (is_string($data)) {
+            $data = ['description' => $data];
+        }
+
+        $ret = wei()->event->until('scoreChange', [$user, $score, $data]);
         if ($ret) {
             return $ret;
         }
@@ -104,7 +109,11 @@ class Score extends BaseModel
 
         // 2. 记录一笔积分记录
         $balance = $user['score'] + $score;
-        $this->log($user, $score, $remark);
+        $log = [
+            'user_id' => $user['id'],
+            'score' => $score,
+        ];
+        wei()->scoreLog()->setAppId()->save($log + $data);
 
         // 3. 扣款并保存,之后还原积分为数字
         $user->incr('score', $score);
@@ -112,35 +121,17 @@ class Score extends BaseModel
         $user['score'] = $balance;
 
         // 4. 触发积分更改后事件
-        wei()->event->trigger('postScoreChange', [$user, $score, $remark]);
+        wei()->event->trigger('postScoreChange', [$user, $score, $data]);
         wei()->queue->push(PostScoreChange::className(), [
             'user_id' => $user['id'],
             'score' => $score,
-            'remark' => $remark
+            'data' => $data
         ], wei()->app->getNamespace());
 
         // 发送模板消息
         $this->sendChangedScoreTplMsg($user, $score);
 
         return ['code' => 1, 'message' => '更改成功'];
-    }
-
-    /**
-     * 记录积分日志
-     *
-     * @param \Miaoxing\Plugin\Service\User $user
-     * @param int $score
-     * @param string $remark
-     */
-    protected function log(\Miaoxing\Plugin\Service\User $user, $score, $remark = '')
-    {
-        // 注意: 这里使用了用户所在的数据库
-        $user->db->insert('scoreHistory', [
-            'userId' => $user['id'],
-            'score' => $score,
-            'remark' => $remark,
-            'createTime' => date('Y-m-d H:i:s'),
-        ]);
     }
 
     /**
