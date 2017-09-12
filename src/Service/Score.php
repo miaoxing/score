@@ -125,7 +125,7 @@ class Score extends BaseModel
         wei()->queue->push(PostScoreChange::className(), [
             'user_id' => $user['id'],
             'score' => $score,
-            'data' => $data
+            'data' => $data,
         ], wei()->app->getNamespace());
 
         // 发送模板消息
