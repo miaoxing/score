@@ -10,10 +10,10 @@ class Plugin extends \miaoxing\plugin\BasePlugin
 
     public function onAdminNavGetNavs(&$navs, &$categories, &$subCategories)
     {
-        $navs[] = [
+        /*$navs[] = [
             'parentId' => 'marketing-stat',
             'url' => 'admin/score/data',
             'name' => '积分统计',
-        ];
+        ];*/
     }
 }
