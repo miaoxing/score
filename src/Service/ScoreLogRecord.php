@@ -11,6 +11,10 @@ use Miaoxing\Plugin\Service\User;
  */
 class ScoreLogRecord extends BaseModel
 {
+    const ACTION_ADD = 1;
+
+    const ACTION_SUB = 2;
+
     protected $table = 'score_logs';
 
     protected $providers = [
@@ -22,6 +26,29 @@ class ScoreLogRecord extends BaseModel
     protected $createAtColumn = 'created_at';
 
     protected $createdByColumn = 'created_by';
+
+    /**
+     * @var array
+     */
+    protected $statFields = ['app_id'];
+
+    /**
+     * @var array
+     */
+    protected $statActions = [
+        self::ACTION_ADD => 'add',
+        self::ACTION_SUB => 'sub',
+    ];
+
+    /**
+     * @var bool
+     */
+    protected $statTotal = true;
+
+    /**
+     * @var array
+     */
+    protected $statSums = ['score'];
 
     public function user()
     {
