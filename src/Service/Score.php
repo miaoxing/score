@@ -111,7 +111,9 @@ class Score extends BaseModel
         $balance = $user['score'] + $score;
         $log = [
             'user_id' => $user['id'],
-            'score' => $score,
+            'score' => abs($score),
+            'action' => $score > 0 ? ScoreLogRecord::ACTION_ADD : ScoreLogRecord::ACTION_SUB,
+            'created_month' => date('Y-m-01'),
         ];
         wei()->scoreLog()->setAppId()->save($log + $data);
 
