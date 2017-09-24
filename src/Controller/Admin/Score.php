@@ -20,16 +20,16 @@ class Score extends \miaoxing\plugin\BaseController
             return $this->err('请输入积分');
         }
 
-        $userList = array();
+        $userList = [];
         if ($req['all'] != 'all') {
             if ($req['userlist']) {
                 $userList = explode(',', $req['userlist']);
             }
         } else {
-            $userCount = wei()->db->count('user', array('1' => 1));
+            $userCount = wei()->db->count('user', ['1' => 1]);
             $page = ceil($userCount / 1000);
 
-            for ($i = 1; $i <= $page; $i++) {
+            for ($i = 1; $i <= $page; ++$i) {
                 $result = wei()->user()->select('id')->limit(1000)->page($i)->fetchAll();
                 if ($result) {
                     foreach ($result as $key => $value) {
