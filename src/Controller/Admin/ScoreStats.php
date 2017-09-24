@@ -8,6 +8,5 @@ class ScoreStats extends BaseController
 {
     public function showAction()
     {
-
     }
 }
