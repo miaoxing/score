@@ -1,5 +1,7 @@
 <?php
 
+use Miaoxing\Score\Service\ScoreLogRecord;
+
 $view->layout();
 ?>
 
@@ -110,8 +112,8 @@ $view->layout();
         },
         {
           data: 'score',
-          render: function (data) {
-            return data > 0 ? ('+' + data) : ('-' + data);
+          render: function (data, type, full) {
+            return full.action == <?= ScoreLogRecord::ACTION_ADD ?> ? ('+' + data) : ('-' + data);
           }
         },
         {
