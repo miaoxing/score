@@ -18,7 +18,8 @@ $view->layout();
       <form class="js-chart-form form-inline">
         <div class="form-group">
           <label class="control-label" for="start-date">月份范围</label>
-          <input type="text" class="js-start-month form-control text-center" id="start-date" name="start_date" value="<?= $startMonth ?>">
+          <input type="text" class="js-start-month form-control text-center" id="start-date" name="start_date"
+            value="<?= $startMonth ?>">
           ~
           <input type="text" class="js-end-month form-control text-center" name="end_date" value="<?= $endMonth ?>">
         </div>

@@ -63,7 +63,6 @@ class ScoreLogs extends BaseController
                 ]);
 
             default:
-
                 return get_defined_vars();
         }
     }
