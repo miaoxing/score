@@ -30,6 +30,7 @@ class ScoreMonthlyStats extends BaseController
             case 'json':
                 // 1. 读出统计数据
                 $stats = wei()->scoreMonthlyStat()
+                    ->curApp()
                     ->andWhere('stat_date BETWEEN ? AND ? ', [$startDate, $endDate])
                     ->fetchAll();
 
@@ -40,6 +41,7 @@ class ScoreMonthlyStats extends BaseController
                 if (count($stats) != $dateCount) {
                     // 找到最后一个有数据的日期
                     $lastStat = wei()->scoreMonthlyStat()
+                        ->curApp()
                         ->andWhere('stat_date < ?', $startDate)
                         ->desc('id')
                         ->toArray();
