@@ -25,7 +25,7 @@ class ScoreLogRecord extends BaseModel
 
     protected $userIdColumn = 'user_id';
 
-    protected $createAtColumn = 'created_at';
+    protected $createdAtColumn = 'created_at';
 
     protected $createdByColumn = 'created_by';
 
