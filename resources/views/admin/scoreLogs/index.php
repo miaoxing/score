@@ -144,7 +144,7 @@ $view->layout();
     $('.js-nick-name').select2({
       allowClear: true,
       ajax: {
-        url: $.url('admin/user.json'),
+        url: $.url('admin/user.json', {filter_empty: 'nickName'}),
         dataType: 'json',
         data: function (term) {
           return {
