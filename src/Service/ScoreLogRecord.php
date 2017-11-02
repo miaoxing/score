@@ -20,11 +20,11 @@ class ScoreLogRecord extends BaseModel
 
     protected $actionTable = [
         self::ACTION_ADD => [
-            'text' => '增加'
+            'text' => '增加',
         ],
         self::ACTION_SUB => [
-            'text' => '减少'
-        ]
+            'text' => '减少',
+        ],
     ];
 
     protected $table = 'score_logs';
