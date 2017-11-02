@@ -19,6 +19,14 @@ $view->layout();
                 placeholder="请输入昵称搜索">
             </div>
 
+            <label class="col-md-1 control-label" for="type">变化类型：</label>
+
+            <div class="col-md-3">
+              <select class="js-type form-control" id="type" name="type">
+                <option value="">全部</option>
+              </select>
+            </div>
+
             <label class="col-md-1 control-label" for="created-at">变化时间：</label>
 
             <div class="col-md-3">
@@ -26,16 +34,15 @@ $view->layout();
               <input type="hidden" class="js-start-date" name="start_date">
               <input type="hidden" class="js-end-date" name="end_date">
             </div>
+          </div>
 
+          <div class="form-group form-group-sm">
             <label class="col-md-1 control-label" for="code">会员卡号：</label>
 
             <div class="col-md-3">
               <input class="form-control" id="code" name="card_code" type="text">
             </div>
 
-          </div>
-
-          <div class="form-group form-group-sm">
             <label class="col-md-1 control-label" for="reason">变化说明：</label>
 
             <div class="col-md-3">
@@ -80,13 +87,13 @@ $view->layout();
 <?= $block('js') ?>
 <script>
   require([
-    'dataTable',
     'form',
+    'dataTable',
     'comps/select2/select2.min',
     'css!comps/select2/select2',
     'css!comps/select2-bootstrap-css/select2-bootstrap',
     'daterangepicker'
-  ], function () {
+  ], function (form) {
     var $table = $('.js-member-table').dataTable({
       ajax: {
         url: $.queryUrl('admin/score-logs.json')
@@ -131,6 +138,8 @@ $view->layout();
         $table.reload($(this).serialize(), false);
         e.preventDefault();
       });
+
+    form.toOptions($('.js-type'), <?= json_encode(wei()->scoreLogRecord->getConstants('action')) ?>, 'id', 'text');
 
     $('.js-nick-name').select2({
       allowClear: true,

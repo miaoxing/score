@@ -3,6 +3,7 @@
 namespace Miaoxing\Score\Service;
 
 use miaoxing\plugin\BaseModel;
+use Miaoxing\Plugin\Constant;
 use Miaoxing\Plugin\Service\User;
 
 /**
@@ -11,9 +12,20 @@ use Miaoxing\Plugin\Service\User;
  */
 class ScoreLogRecord extends BaseModel
 {
+    use Constant;
+
     const ACTION_ADD = 1;
 
     const ACTION_SUB = 2;
+
+    protected $actionTable = [
+        self::ACTION_ADD => [
+            'text' => '增加'
+        ],
+        self::ACTION_SUB => [
+            'text' => '减少'
+        ]
+    ];
 
     protected $table = 'score_logs';
 

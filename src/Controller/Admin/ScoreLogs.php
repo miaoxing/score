@@ -30,6 +30,10 @@ class ScoreLogs extends BaseController
                     $scoreLogs->andWhere(['user_id' => $req['user_id']]);
                 }
 
+                if ($req['type']) {
+                    $scoreLogs->andWhere(['action' => $req['type']]);
+                }
+
                 if ($req['card_code']) {
                     $scoreLogs->andWhere(['card_code' => $req['card_code']]);
                 }
