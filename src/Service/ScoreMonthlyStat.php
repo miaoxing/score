@@ -2,7 +2,7 @@
 
 namespace Miaoxing\Score\Service;
 
-use miaoxing\plugin\BaseService;
+use Miaoxing\Plugin\BaseService;
 
 class ScoreMonthlyStat extends BaseService
 {
