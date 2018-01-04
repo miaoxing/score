@@ -2,7 +2,7 @@
 
 namespace Miaoxing\Score\Controller;
 
-class UserScore extends \miaoxing\plugin\BaseController
+class UserScore extends \Miaoxing\Plugin\BaseController
 {
     public function indexAction($req)
     {

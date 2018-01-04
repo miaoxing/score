@@ -3,7 +3,7 @@
 namespace Miaoxing\Score\Controller\Admin;
 
 use DateTime;
-use miaoxing\plugin\BaseController;
+use Miaoxing\Plugin\BaseController;
 
 class ScoreMonthlyStats extends BaseController
 {

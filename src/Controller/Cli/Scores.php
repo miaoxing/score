@@ -2,7 +2,7 @@
 
 namespace Miaoxing\Score\Controller\Cli;
 
-use miaoxing\plugin\BaseController;
+use Miaoxing\Plugin\BaseController;
 
 class Scores extends BaseController
 {

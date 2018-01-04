@@ -2,7 +2,7 @@
 
 namespace Miaoxing\Score\Controller\Admin;
 
-use miaoxing\plugin\BaseController;
+use Miaoxing\Plugin\BaseController;
 
 class ScoreLogs extends BaseController
 {
