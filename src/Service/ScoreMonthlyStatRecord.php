@@ -2,7 +2,7 @@
 
 namespace Miaoxing\Score\Service;
 
-use miaoxing\plugin\BaseModel;
+use Miaoxing\Plugin\BaseModel;
 
 class ScoreMonthlyStatRecord extends BaseModel
 {

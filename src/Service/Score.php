@@ -2,7 +2,7 @@
 
 namespace Miaoxing\Score\Service;
 
-use miaoxing\plugin\BaseModel;
+use Miaoxing\Plugin\BaseModel;
 use Miaoxing\Plugin\Service\User;
 use Miaoxing\Score\Job\PostScoreChange;
 
