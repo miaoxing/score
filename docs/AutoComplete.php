@@ -12,7 +12,9 @@ namespace plugins\score\docs {
      * @method      \Miaoxing\Score\Service\Score|\Miaoxing\Score\Service\Score[] score()
      *
      * @property    ScoreLog $scoreLog 积分日志
-     * @method      ScoreLogRecord|ScoreLogRecord[] scoreLog()
+     *
+     * @property    ScoreLogRecord $scoreLogRecord 积分日志模型
+     * @method      ScoreLogRecord|ScoreLogRecord[] scoreLogRecord()
      *
      * @property    ScoreMonthlyStat $scoreMonthlyStat 积分每月统计
      * @method      ScoreMonthlyStatRecord|ScoreMonthlyStatRecord[] scoreMonthlyStat()

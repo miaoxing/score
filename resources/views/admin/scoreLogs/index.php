@@ -139,7 +139,7 @@ $view->layout();
         e.preventDefault();
       });
 
-    form.toOptions($('.js-type'), <?= json_encode(wei()->scoreLogRecord->getConstants('action')) ?>, 'id', 'text');
+    form.toOptions($('.js-type'), <?= json_encode(wei()->scoreLogRecord->getConsts('action')) ?>, 'id', 'text');
 
     $('.js-nick-name').select2({
       allowClear: true,

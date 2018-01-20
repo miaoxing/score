@@ -3,7 +3,7 @@
 namespace Miaoxing\Score\Service;
 
 use Miaoxing\Plugin\BaseModel;
-use Miaoxing\Plugin\Constant;
+use Miaoxing\Plugin\ConstTrait;
 use Miaoxing\Plugin\Service\User;
 
 /**
@@ -12,7 +12,7 @@ use Miaoxing\Plugin\Service\User;
  */
 class ScoreLogRecord extends BaseModel
 {
-    use Constant;
+    use ConstTrait;
 
     const ACTION_ADD = 1;
 
