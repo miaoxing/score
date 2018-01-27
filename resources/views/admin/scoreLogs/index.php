@@ -84,7 +84,7 @@ $view->layout();
 
 <?php require $view->getFile('@user/admin/user/richInfo.php') ?>
 
-<?= $block('js') ?>
+<?= $block->js() ?>
 <script>
   require([
     'form',

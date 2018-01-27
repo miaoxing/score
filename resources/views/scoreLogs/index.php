@@ -5,7 +5,7 @@ use Miaoxing\Score\Service\ScoreLogRecord;
 $view->layout();
 ?>
 
-<?= $block('css') ?>
+<?= $block->css() ?>
 <link rel="stylesheet" href="<?= $asset('plugins/score/css/scores.css') ?>"/>
 <?= $block->end() ?>
 
@@ -34,7 +34,7 @@ $view->layout();
   </li>
 </script>
 
-<?= $block('js') ?>
+<?= $block->js() ?>
 <script>
   require(['comps/artTemplate/template.min'], function () {
     template.helper('$', $);
