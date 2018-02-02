@@ -70,7 +70,7 @@ class Score extends BaseModel
             return $score;
         }
 
-        return $user['score'];
+        return (int) $user['score'];
     }
 
     /**
