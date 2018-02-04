@@ -6,7 +6,7 @@ $view->layout();
 ?>
 
 <?= $block->css() ?>
-<link rel="stylesheet" href="<?= $asset('plugins/score/css/scores.css') ?>"/>
+<link rel="stylesheet" href="<?= $asset('plugins/score/css/scores.css') ?>">
 <?= $block->end() ?>
 
 <div class="bg-light border-bottom p-a-md text-center m-b-sm text-md">
