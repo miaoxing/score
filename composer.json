@@ -2,13 +2,17 @@
   "name": "miaoxing/score",
   "description": "Miaoxing Score Plugin",
   "keywords": [
-    "miaoxing", "score"
+    "miaoxing",
+    "score"
   ],
   "license": "MIT",
   "require": {
     "miaoxing/app": "dev-master@dev",
     "miaoxing/user": "dev-master@dev",
     "miaoxing/stat": "dev-master@dev"
+  },
+  "require-dev": {
+    "miaoxing/coding-standards": "^2.0.0"
   },
   "autoload": {
     "psr-4": {

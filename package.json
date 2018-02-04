@@ -1,0 +1,9 @@
+{
+  "name": "miaoxing-score",
+  "version": "1.0.0",
+  "repository": "https://github.com/miaoxing/score",
+  "license": "MIT",
+  "devDependencies": {
+    "miaoxing-coding-standards": "^2.0.0"
+  }
+}
