@@ -115,7 +115,7 @@ class Score extends BaseModel
             'action' => $score > 0 ? ScoreLogRecord::ACTION_ADD : ScoreLogRecord::ACTION_SUB,
             'created_month' => date('Y-m-01'),
         ];
-        wei()->scoreLog()->setAppId()->save($log + $data);
+        $scoreLog = wei()->scoreLog()->setAppId()->save($log + $data);
 
         // 3. 扣款并保存,之后还原积分为数字
         $user->incr('score', $score);
@@ -126,6 +126,7 @@ class Score extends BaseModel
         wei()->event->trigger('postScoreChange', [$user, $score, $data]);
         wei()->queue->push(PostScoreChange::class, [
             'user_id' => $user['id'],
+            'scoreLogId' => $scoreLog['id'],
             'score' => $score,
             'data' => $data,
         ], wei()->app->getNamespace());
