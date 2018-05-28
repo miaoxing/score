@@ -4,6 +4,12 @@ namespace Miaoxing\Score\Controller\Admin;
 
 class Score extends \Miaoxing\Plugin\BaseController
 {
+    protected $controllerName = '积分管理';
+
+    protected $actionPermissions = [
+        'index,send' => '赠送',
+    ];
+
     public function indexAction($req)
     {
         return get_defined_vars();
