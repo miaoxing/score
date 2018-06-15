@@ -15,7 +15,7 @@ class ScoreLogs extends BaseController
 
         $scores->limit($rows)->page($page);
 
-        $scores->desc('id');
+        $scores->desc('created_at');
 
         $data = [];
         foreach ($scores->findAll() as $score) {
