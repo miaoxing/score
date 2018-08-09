@@ -120,7 +120,7 @@ class Score extends BaseModel
         // 3. 扣款并保存,之后还原积分为数字
         $user->incr('score', $score);
         $user->save();
-        $user['score'] = $balance;
+        $user->setRawValue('score', $balance);
 
         // 4. 触发积分更改后事件
         wei()->event->trigger('postScoreChange', [$user, $score, $data]);
