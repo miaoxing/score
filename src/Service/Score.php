@@ -162,6 +162,11 @@ class Score extends BaseModel
 
     public function getSources()
     {
-        return wei()->event->until('scoreGetSources');
+        $sources = array_column(wei()->scoreLogModel()
+            ->select('source')
+            ->groupBy('source')
+            ->andWhere("source != ''")
+            ->fetchAll(), 'source');
+        return array_combine($sources, $sources);
     }
 }
