@@ -159,4 +159,9 @@ class Score extends BaseModel
     {
         return wei()->db('scoreHistory')->where('userId=?', $userId)->andWhere('score!=?', 0)->desc('id')->fetchAll();
     }
+
+    public function getSources()
+    {
+        return wei()->event->until('scoreGetSources');
+    }
 }
