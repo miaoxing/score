@@ -41,5 +41,15 @@ class Plugin extends \Miaoxing\Plugin\BasePlugin
             $userScore->incr('used_score', -$score);
         }
         $userScore->save();
+
+        if (!$data['data']['source']) {
+            return;
+        }
+
+        $userSourceScore = wei()->userSourceScoreModel()->findOrInit([
+            'user_id' => $data['userId'],
+            'source' => $data['data']['source'],
+        ]);
+        $userSourceScore->incr('score', $score)->save();
     }
 }
