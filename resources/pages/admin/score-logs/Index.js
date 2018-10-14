@@ -39,8 +39,8 @@ export default class extends React.Component {
 
       <TableProvider>
         <SearchForm>
-          <SearchItem label="昵称" name="user[nickName]$ct"/>
-          <SearchItem label="手机" name="user[mobile]$ct"/>
+          <SearchItem label="昵称" name="user[nickName$ct]"/>
+          <SearchItem label="手机" name="user[mobile$ct]"/>
           <SearchItem label="会员卡号" name="cardCode$ct"/>
           <SearchItem label="来源" name="source">
             <Options data={this.state.sources}/>
