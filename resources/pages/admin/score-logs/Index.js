@@ -20,7 +20,7 @@ export default class extends React.Component {
 
   componentDidMount() {
     $.ajax({
-      url: app.url('admin/score-logs/metadata.json'),
+      url: app.actionUrl('metadata.json'),
       loading: true,
     }).done(ret => {
       if (ret.code !== 1) {
