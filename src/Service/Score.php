@@ -2,12 +2,24 @@
 
 namespace Miaoxing\Score\Service;
 
+use Miaoxing\Config\ConfigTrait;
 use Miaoxing\Plugin\BaseModel;
 use Miaoxing\Plugin\Service\User;
 use Miaoxing\Score\Job\PostScoreChange;
 
+/**
+ * @property bool $enableShop
+ */
 class Score extends BaseModel
 {
+    use ConfigTrait;
+
+    protected $configs = [
+        'enableShop' => [
+            'default' => false,
+        ]
+    ];
+
     protected $changedTemplateId;
 
     /**

@@ -65,7 +65,9 @@ $view->layout();
         <tr>
           <th>用户</th>
           <th>卡号</th>
+          <?php if (wei()->score->enableShop) { ?>
           <th>门店编号</th>
+          <?php } ?>
           <th>积分变化</th>
           <th>变化说明</th>
           <th>变化时间</th>
@@ -111,12 +113,14 @@ $view->layout();
             return data || '-';
           }
         },
+        <?php if (wei()->score->enableShop) { ?>
         {
           data: 'shop_id',
           render: function (data) {
             return data === '0' ? '-' : data;
           }
         },
+        <?php } ?>
         {
           data: 'score',
           render: function (data, type, full) {
