@@ -13,6 +13,7 @@ class V20181014224305CreateUserSourceScoresTable extends BaseMigration
     {
         $this->schema->table('user_source_scores')
             ->id()
+            ->int('app_id')
             ->int('user_id')
             ->string('source', 16)
             ->int('score')

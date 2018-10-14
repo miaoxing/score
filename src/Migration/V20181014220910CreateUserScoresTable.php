@@ -12,7 +12,8 @@ class V20181014220910CreateUserScoresTable extends BaseMigration
     public function up()
     {
         $this->schema->table('user_scores')
-            ->int('id')
+            ->id()
+            ->int('app_id')
             ->int('user_id')
             ->int('score')
             ->int('used_score')

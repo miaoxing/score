@@ -6,6 +6,7 @@ namespace Miaoxing\Score\Metadata;
  * UserScoreTrait
  *
  * @property int $id
+ * @property int $appId
  * @property int $userId
  * @property int $score
  * @property int $usedScore
@@ -21,6 +22,7 @@ trait UserScoreTrait
      */
     protected $casts = [
         'id' => 'int',
+        'app_id' => 'int',
         'user_id' => 'int',
         'score' => 'int',
         'used_score' => 'int',
