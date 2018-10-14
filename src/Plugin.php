@@ -28,4 +28,18 @@ class Plugin extends \Miaoxing\Plugin\BasePlugin
             'name' => '积分每月统计',
         ];
     }
+
+    public function onAsyncPostScoreChange($data)
+    {
+        $userScore = wei()->userScoreModel()->findOrInit(['user_id' => $data['userId']]);
+
+        $score = $data['score'];
+        $userScore->incr('score', $score);
+        if ($score > 0) {
+            $userScore->incr('total_score', $score);
+        } else {
+            $userScore->incr('used_score', -$score);
+        }
+        $userScore->save();
+    }
 }

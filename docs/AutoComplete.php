@@ -20,6 +20,9 @@ namespace MiaoxingDoc\Score {
      *
      * @property    \Miaoxing\Score\Service\ScoreMonthlyStatRecord $scoreMonthlyStatRecord
      * @method      \Miaoxing\Score\Service\ScoreMonthlyStatRecord|\Miaoxing\Score\Service\ScoreMonthlyStatRecord[] scoreMonthlyStatRecord()
+     *
+     * @property    \Miaoxing\Score\Service\UserScoreModel $userScoreModel UserScoreModel
+     * @method      \Miaoxing\Score\Service\UserScoreModel|\Miaoxing\Score\Service\UserScoreModel[] userScoreModel()
      */
     class AutoComplete
     {
@@ -55,4 +58,10 @@ namespace {
 
     /** @var Miaoxing\Score\Service\ScoreMonthlyStatRecord $scoreMonthlyStatRecord */
     $scoreMonthlyStatRecord = wei()->scoreMonthlyStatRecord;
+
+    /** @var Miaoxing\Score\Service\UserScoreModel $userScoreModel */
+    $userScore = wei()->userScoreModel();
+
+    /** @var Miaoxing\Score\Service\UserScoreModel|Miaoxing\Score\Service\UserScoreModel[] $userScoreModels */
+    $userScores = wei()->userScoreModel();
 }

@@ -137,7 +137,8 @@ class Score extends BaseModel
         // 4. 触发积分更改后事件
         wei()->event->trigger('postScoreChange', [$user, $score, $data]);
         wei()->queue->push(PostScoreChange::class, [
-            'user_id' => $user['id'],
+            'user_id' => $user['id'], // 待废弃
+            'userId' => $user['id'],
             'scoreLogId' => $scoreLog['id'],
             'score' => $score,
             'data' => $data,
