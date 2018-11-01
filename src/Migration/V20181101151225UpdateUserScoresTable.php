@@ -22,9 +22,9 @@ class V20181101151225UpdateUserScoresTable extends BaseMigration
      */
     public function down()
     {
-        $this->schema->table('user_source_scores')
-            ->int('score')->unsigned(true)->change()
-            ->int('total_score')->unsigned(true)->change()
+        $this->schema->table('user_scores')
+            ->int('score')->unsigned()->change()
+            ->int('total_score')->unsigned()->change()
             ->exec();
     }
 }
