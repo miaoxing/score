@@ -32,7 +32,7 @@ export default class extends React.Component {
   }
 
   render() {
-    return <React.Fragment>
+    return <>
       <PageHeader>
         {wei.page.controllerTitle}
       </PageHeader>
@@ -88,6 +88,6 @@ export default class extends React.Component {
           ]}
         />
       </TableProvider>
-    </React.Fragment>;
+    </>;
   }
 }
