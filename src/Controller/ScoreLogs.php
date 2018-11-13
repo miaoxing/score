@@ -34,7 +34,7 @@ class ScoreLogs extends BaseController
                 return $this->ret($ret);
 
             default:
-                $headerTitle = '积分记录';
+                $this->page->setTitle('积分记录');
 
                 return get_defined_vars();
         }
