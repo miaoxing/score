@@ -102,7 +102,7 @@ class Score extends BaseModel
             $data = ['description' => $data];
         }
 
-        $ret = wei()->event->until('scoreChange', [$user, $score, $data]);
+        $ret = wei()->event->until('beforeScoreChange', [$user, $score, &$data]);
         if ($ret) {
             return $ret;
         }
