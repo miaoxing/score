@@ -142,7 +142,7 @@ class Score extends BaseModel
             'scoreLogId' => $scoreLog['id'],
             'score' => $score,
             'data' => $data,
-        ], wei()->app->getNamespace());
+        ]);
 
         // 发送模板消息
         $this->sendChangedScoreTplMsg($user, $score);
