@@ -12,7 +12,7 @@ $view->layout();
 <?= $block->end() ?>
 
 <div class="row">
-  <div class="col-xs-12">
+  <div class="col-12">
 
     <div class="well well-sm">
       <form class="js-chart-form form-inline">

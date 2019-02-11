@@ -9,7 +9,7 @@
 
 <div class="row">
 
-  <div class="col-xs-12">
+  <div class="col-12">
     <!-- PAGE detail BEGINS -->
     <form id="score-form" class="form-horizontal" method="post" role="form" action="<?= $url('admin/score/send') ?>">
 
@@ -58,7 +58,7 @@
 
 
       <div class="clearfix form-actions form-group">
-        <div class="col-lg-offset-2">
+        <div class="offset-lg-2">
           <button class="btn btn-primary" type="submit">
             <i class="fa fa-check bigger-110"></i>
             提交
