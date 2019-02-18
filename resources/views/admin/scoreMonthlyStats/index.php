@@ -29,8 +29,8 @@ $view->layout();
     <h5 class="stat-title">趋势图</h5>
 
     <ul class="js-chart-tabs nav tab-underline">
-      <li role="presentation" class="nav-item active">
-        <a class="nav-link" href="#score" aria-controls="score" role="tab" data-toggle="tab">积分变动</a>
+      <li role="presentation" class="nav-item">
+        <a class="nav-link active" href="#score" aria-controls="score" role="tab" data-toggle="tab">积分变动</a>
       </li>
     </ul>
     <div class="tab-content m-t border-0">
