@@ -1,5 +1,4 @@
 import React from "react";
-import {PageHeader} from "react-bootstrap";
 import app from 'app';
 import SearchDateRangePicker from "components/SearchDateRangePicker";
 import TableProvider from "components/TableProvider";
@@ -8,6 +7,7 @@ import SearchItem from "components/SearchItem";
 import SearchForm from "components/SearchForm";
 import UserPopoverV1 from "vendor/miaoxing/user/resources/components/UserPopoverV1";
 import Options from "components/Options";
+import PageHeader from "components/PageHeader";
 
 const ACTION_ADD = 1;
 
@@ -33,9 +33,7 @@ export default class extends React.Component {
 
   render() {
     return <>
-      <PageHeader>
-        {wei.page.controllerTitle}
-      </PageHeader>
+      <PageHeader/>
 
       <TableProvider>
         <SearchForm>
