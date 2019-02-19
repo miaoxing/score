@@ -9,10 +9,10 @@ $view->layout();
 <link rel="stylesheet" href="<?= $asset('plugins/score/css/scores.css') ?>">
 <?= $block->end() ?>
 
-<div class="bg-light border-bottom p-a-md text-center m-b-sm">
-  <i class="score-icon ni ni-coins bg-primary m-r-sm"> </i>
+<div class="bg-light border-bottom p-4 text-center mb-2">
+  <i class="score-icon ni ni-coins bg-primary mr-2"> </i>
   当前<?= $setting('score.title', '积分') ?>
-  <span class="score-num text-primary m-l-sm"><?= wei()->score->getScore() ?></span>
+  <span class="score-num text-primary ml-2"><?= wei()->score->getScore() ?></span>
 </div>
 
 <ul class="js-score-log-list list list-indented">
