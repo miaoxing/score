@@ -66,7 +66,6 @@ $view->layout();
     'plugins/stat/js/stat',
     'plugins/stat/js/highcharts',
     'form',
-    'jquery-unparam',
     'plugins/admin/js/data-table',
     'comps/bootstrap-datepicker/js/bootstrap-datepicker.min',
     'css!comps/bootstrap-datepicker/css/bootstrap-datepicker3.min'
