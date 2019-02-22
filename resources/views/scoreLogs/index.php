@@ -37,7 +37,6 @@ $view->layout();
 <?= $block->js() ?>
 <script>
   require(['plugins/app/libs/artTemplate/template.min', 'plugins/app/libs/jquery-list/jquery-list'], function () {
-    template.helper('$', $);
 
     var list = $('.js-score-log-list').list({
       url: '<?= $url->query('score-logs.json') ?>',
