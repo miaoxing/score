@@ -22,7 +22,7 @@ $view->layout();
   <li class="list-item">
     <h4 class="list-heading">
       <%= description %>
-      <span class="pull-right">
+      <span class="float-right">
         <span class="text-<%= action == <?= ScoreLogRecord::ACTION_ADD ?> ? 'success' : 'danger' %>">
           <%= action == <?= ScoreLogRecord::ACTION_ADD ?> ? '+' : '-' %><%= score %>
         </span>
