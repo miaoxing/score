@@ -20,7 +20,7 @@ $view->layout();
 
 <script type="text/html" class="js-score-log-item-tpl">
   <li class="list-item">
-    <h4 class="list-heading">
+    <h4 class="list-title">
       <%= description %>
       <span class="float-right">
         <span class="text-<%= action == <?= ScoreLogRecord::ACTION_ADD ?> ? 'success' : 'danger' %>">
@@ -28,7 +28,7 @@ $view->layout();
         </span>
       </span>
     </h4>
-    <div class="list-body">
+    <div class="list-text">
       <%= created_at.substr(0, 16) %>
     </div>
   </li>
