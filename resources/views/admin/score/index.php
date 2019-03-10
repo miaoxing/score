@@ -60,7 +60,7 @@
 
 <?= $block->js() ?>
 <script>
-  require(['form', 'ueditor'], function () {
+  require(['plugins/admin/js/form', 'ueditor'], function () {
     $('#score-form')
       .ajaxForm({
         dataType: 'json',
